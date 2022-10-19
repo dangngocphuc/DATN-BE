@@ -3,14 +3,11 @@ package com.example.daphoneapple.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
-@Getter
-@Setter
+
 @Data
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "IMAGE")
 public class Image {
@@ -19,11 +16,12 @@ public class Image {
     private Long id;
 
     private String imgUrl;
-    @Temporal(TemporalType.DATE)
-    private Date createDate;
+
+    private LocalDate createDate;
 
     private String imgType;
 
+    @Column(name = "Image_status")
     private Boolean status;
 
     @ManyToOne

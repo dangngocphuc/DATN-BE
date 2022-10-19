@@ -3,18 +3,35 @@ package com.example.daphoneapple.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
-@Getter
-@Setter
+
 @Data
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "OPTIONS")
 public class Option {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Option_id")
+    private Long id;
+
+    @Column(name = "Option_name")
+    private String name;
+
+    @Column(name = "Option_code")
+    private String code;
+
+    @Column(name = "Option_status")
+    private Boolean status;
+
+    @OneToMany(mappedBy = "option",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<OptionValue> optionValues;
+
+    @OneToMany(mappedBy = "option",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<OptionContainer> optionContainers;
+
+    @ManyToOne
+    @JoinColumn(name = "Product_id")
+    private Product product;
 }

@@ -4,14 +4,10 @@ package com.example.daphoneapple.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Getter
-@Setter
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 @Table(name = "ROLES")
 public class Role {
     @Id
@@ -20,6 +16,9 @@ public class Role {
     private Integer id;
 
     private String name;
+
+    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<UserRole> roleList;
 
 
 }

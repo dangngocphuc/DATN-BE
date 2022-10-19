@@ -7,12 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 @Table(name = "VOUCHERS")
 public class Voucher {
     @Id

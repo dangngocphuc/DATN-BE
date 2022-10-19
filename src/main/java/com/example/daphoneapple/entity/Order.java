@@ -5,23 +5,25 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+@Table(name = "ORDERS")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Order_id")
     private Long id;
 
+    @Column(unique = true)
     private String orderCode;
+    @Column(name = "Order_email",unique = true)
     private String email;
+    @Column(unique = true)
     private Integer phoneNumber;
     private String customerName;
+    @Column(name = "Order_address")
     private String address;
     private Double totalPrice;
     private String description;
@@ -39,4 +41,9 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "Order_status_id")
     private OrderStatus orderStatus;
+
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<OrderDetail> orderDetails;
+
+
 }

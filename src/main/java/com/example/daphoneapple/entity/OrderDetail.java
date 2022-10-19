@@ -6,12 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@Table(name = "Order_Details")
+@Table(name = "ORDER_DETAILS")
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

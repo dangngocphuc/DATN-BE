@@ -3,24 +3,23 @@ package com.example.daphoneapple.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 @Table(name = "PRODUCT")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String productCode;
 
-    @Temporal(TemporalType.DATE)
-    private Date createDate;
+
+    private LocalDate createDate;
 
     private String description;
     private Boolean status;
@@ -32,5 +31,10 @@ public class Product {
     @OneToOne
     @JoinColumn(name = "Voucher_id")
     private Voucher voucher;
+
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<Option> optionList;
+
+
 
 }

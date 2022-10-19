@@ -3,27 +3,22 @@ package com.example.daphoneapple.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 @Data
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@Table(name = "Order_status")
+@Table(name = "ORDER_STATUS")
 public class OrderStatus {
     @Id
     private Long id;
 
     private String name;
     private String description;
-    @Temporal(TemporalType.DATE)
-    private Date createDate;
 
-    @Temporal(TemporalType.DATE)
-    private Date updateDate;
+    private LocalDate createDate;
+
+    private LocalDate updateDate;
 
 
 }
