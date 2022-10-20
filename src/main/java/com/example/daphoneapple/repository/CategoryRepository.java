@@ -1,6 +1,4 @@
-package com.example.daphoneapple.repository;
+package com.example.daphoneapple.entity;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface CategoryRepository  {
+public interface CategoryRepository extends org.springframework.data.jpa.repository.JpaRepository<com.example.daphoneapple.entity.Category, java.lang.Long> {
 }
