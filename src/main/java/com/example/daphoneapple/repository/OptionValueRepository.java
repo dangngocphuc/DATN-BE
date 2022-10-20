@@ -1,4 +1,7 @@
-package com.example.daphoneapple.entity;
+package com.example.daphoneapple.repository;
 
-public interface OptionValueRepository extends org.springframework.data.jpa.repository.JpaRepository<com.example.daphoneapple.entity.OptionValue, java.lang.Long> {
+import com.example.daphoneapple.entity.OptionValue;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OptionValueRepository extends JpaRepository<OptionValue, Long> {
 }
