@@ -106,7 +106,7 @@ public class ProductDetail {
     @JoinColumn(name = "Product_id")
     private Product product;
 
-    @OneToMany(mappedBy = "productDetail",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<OptionContainer> optionContainers;
+    @OneToMany(mappedBy = "productDetail", cascade = CascadeType.ALL)
+    private List<OptionContainer> optionContainers ;
 
 }

@@ -29,8 +29,8 @@ public class User {
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<UserRole> userRoles;
 
-    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Order> list;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Order> list = new java.util.ArrayList<>();
 
 
 }

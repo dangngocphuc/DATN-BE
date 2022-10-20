@@ -72,4 +72,6 @@ public class ProductAccessories {
     @ManyToOne
     @JoinColumn(name = "Cate_id")
     private Category category;
+
+
 }

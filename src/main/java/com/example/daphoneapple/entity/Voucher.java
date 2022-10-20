@@ -1,9 +1,10 @@
+
 package com.example.daphoneapple.entity;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -14,17 +15,16 @@ public class Voucher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Temporal(TemporalType.DATE)
-    private Date createDate;
+    private LocalDate createDate;
 
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Long count;
     private Double discount;
     private Integer type;
     private Boolean status;
 
-    @OneToMany(mappedBy = "voucher",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "voucher", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Order> orders;
 
 }

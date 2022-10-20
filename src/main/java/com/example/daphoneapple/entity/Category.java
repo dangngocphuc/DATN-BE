@@ -18,10 +18,10 @@ public class Category {
     @Column(name = "Category_status")
     private Boolean status;
 
-    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<ProductAccessories> productAccessories;
 
-    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Product> productList;
 
 

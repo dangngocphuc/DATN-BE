@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "IMAGE")
+@Table(name = "IMAGES")
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,4 +27,8 @@ public class Image {
     @ManyToOne
     @JoinColumn(name = "Product_id")
     private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "Product_Accessories_id")
+    private ProductAccessories productAccessories;
 }

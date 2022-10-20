@@ -19,4 +19,8 @@ public class OrderDetail {
     @ManyToOne
     @JoinColumn(name = "Order_id")
     private Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "Product_detail_id")
+    private ProductDetail productDetail;
 }

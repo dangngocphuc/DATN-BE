@@ -42,8 +42,8 @@ public class Order {
     @JoinColumn(name = "Order_status_id")
     private OrderStatus orderStatus;
 
-    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<OrderDetail> orderDetails;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<OrderDetail> orderDetails ;
 
 
 }

@@ -25,8 +25,8 @@ public class Option {
     @Column(name = "Option_status")
     private Boolean status;
 
-    @OneToMany(mappedBy = "option",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<OptionValue> optionValues;
+    @OneToMany(mappedBy = "option", cascade = CascadeType.ALL)
+    private List<OptionValue> optionValues = new java.util.ArrayList<>();
 
     @OneToMany(mappedBy = "option",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<OptionContainer> optionContainers;
