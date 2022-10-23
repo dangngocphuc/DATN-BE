@@ -1,5 +1,6 @@
-package com.example.daphoneapple.service;
+package com.example.daphoneapple.service.impl;
 
+import com.example.daphoneapple.service.CategoryService;
 
-public interface CategoryService {
+public class CategoryServiceImpl implements CategoryService{
 }

@@ -1,5 +1,5 @@
-package com.example.daphoneapple.service;
+package com.example.daphoneapple.service.impl;
 
 
-public interface ProductDetailService {
+public class ProductDetailServiceImpl {
 }

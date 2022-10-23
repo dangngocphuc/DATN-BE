@@ -1,7 +1,7 @@
-package com.example.daphoneapple.service;
+package com.example.daphoneapple.service.impl;
 
-import org.springframework.stereotype.Repository;
+import com.example.daphoneapple.service.OrderStatusService;
 
 
-public interface OrderStatusService {
+public class OrderStatusServiceImpl implements OrderStatusService {
 }
