@@ -1,5 +1,10 @@
 package com.example.daphoneapple.service.impl;
 
+import org.springframework.stereotype.Service;
+import com.example.daphoneapple.service.ProductDetailService;
 
-public class ProductDetailServiceImpl {
+
+@Service
+public class ProductDetailServiceImpl implements ProductDetailService {
+
 }

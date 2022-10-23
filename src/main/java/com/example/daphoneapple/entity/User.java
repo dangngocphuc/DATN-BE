@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.HashSet;
+
+import java.time.LocalDate;
+
 import java.util.List;
 import java.util.Set;
 
@@ -25,28 +29,12 @@ public class User implements UserDetails {
 	@Column(name = "Username", unique = true)
 	private String username;
 
-	private String password;
-	
-	@Column(unique = true)
-	private String email;
-	
-	
-	private String address;
-	@Column(unique = true)
-	
-	private Integer phoneNumber;
-	
-	private Boolean gender;
-	
-	private String fullName;
-	
-	private Boolean status;
-
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<UserRole> userRoles;
 
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Order> list = new java.util.ArrayList<>();
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -56,6 +44,24 @@ public class User implements UserDetails {
 		}
 		return authorities;
 	}
+
+    private String password;
+    
+    @Column(unique = true)
+    private String email;
+    
+    private String address;
+    
+    @Column(unique = true)
+    private Integer phoneNumber;
+    private Boolean gender;
+    
+    private String fullName;
+    
+    private LocalDate createDate;
+    
+    private Boolean status;
+
 
 	@Override
 	public boolean isAccountNonExpired() {
@@ -68,6 +74,13 @@ public class User implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+
+    @PrePersist
+    public void settingUserCreateDate(){
+        this.createDate = LocalDate.now();
+    }
+
 
 	@Override
 	public boolean isCredentialsNonExpired() {

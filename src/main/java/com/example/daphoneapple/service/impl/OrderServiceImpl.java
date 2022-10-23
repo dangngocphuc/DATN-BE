@@ -1,4 +1,11 @@
 package com.example.daphoneapple.service.impl;
 
-public class OrderServiceImpl {
+
+import org.springframework.stereotype.Service;
+
+import com.example.daphoneapple.service.OrderService;
+
+@Service
+public class OrderServiceImpl implements OrderService {
+
 }

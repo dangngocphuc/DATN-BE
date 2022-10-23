@@ -17,7 +17,6 @@ public class Product {
     @Column(unique = true)
     private String productCode;
 
-
     private LocalDate createDate;
 
     private String description;
@@ -34,6 +33,8 @@ public class Product {
     @OneToMany(mappedBy = "product",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Option> optionList;
 
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+    private List<Image> images;
 
 
 }
