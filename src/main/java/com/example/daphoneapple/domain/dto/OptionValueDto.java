@@ -9,7 +9,6 @@ import java.io.Serializable;
  */
 @Data
 public class OptionValueDto implements Serializable {
-    private final Long id;
     private final String value;
     private final Boolean status;
 }

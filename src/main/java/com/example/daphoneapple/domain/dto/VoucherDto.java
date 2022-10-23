@@ -11,7 +11,6 @@ import java.time.LocalDate;
  */
 @Data
 public class VoucherDto implements Serializable {
-    private final Long id;
     private final LocalDate createDate;
     private final LocalDate startDate;
     private final LocalDate endDate;

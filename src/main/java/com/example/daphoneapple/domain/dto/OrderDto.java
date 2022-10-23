@@ -10,7 +10,6 @@ import java.util.Date;
  */
 @Data
 public class OrderDto implements Serializable {
-    private final Long id;
     private final String orderCode;
     private final String email;
     private final Integer phoneNumber;

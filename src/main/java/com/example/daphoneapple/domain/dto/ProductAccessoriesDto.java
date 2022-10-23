@@ -10,7 +10,6 @@ import java.io.Serializable;
  */
 @Data
 public class ProductAccessoriesDto implements Serializable {
-    private final Long id;
     private final String model;
     private final String function;
     private final String output;

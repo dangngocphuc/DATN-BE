@@ -10,9 +10,7 @@ import java.time.LocalDate;
  */
 @Data
 public class ImageDto implements Serializable {
-    private final Long id;
     private final String imgUrl;
     private final LocalDate createDate;
     private final String imgType;
-    private final Boolean status;
 }

@@ -10,7 +10,6 @@ import java.io.Serializable;
  */
 @Data
 public class OrderDetailDto implements Serializable {
-    private final Long id;
     private final Double price;
     private final Long quantity;
     private final Double priceDiscount;

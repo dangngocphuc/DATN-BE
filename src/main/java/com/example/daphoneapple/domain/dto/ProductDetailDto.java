@@ -10,7 +10,6 @@ import java.io.Serializable;
  */
 @Data
 public class ProductDetailDto implements Serializable {
-    private final Long id;
     private final String name;
     private final String screenTechnology;
     private final String resolution;

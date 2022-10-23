@@ -11,7 +11,6 @@ import java.time.LocalDate;
  */
 @Data
 public class OrderStatusDto implements Serializable {
-    private final Long id;
     private final String name;
     private final String description;
     private final LocalDate createDate;

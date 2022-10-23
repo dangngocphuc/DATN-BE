@@ -12,4 +12,5 @@ import java.io.Serializable;
 public class RoleDto implements Serializable {
     private final Integer id;
     private final String name;
+    private Boolean status;
 }
