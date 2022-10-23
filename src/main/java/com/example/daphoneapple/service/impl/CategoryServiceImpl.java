@@ -1,5 +1,9 @@
-package com.example.daphoneapple.service;
+package com.example.daphoneapple.service.impl;
 
 
-public interface CategoryService {
+import com.example.daphoneapple.service.CategoryService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CategoryServiceImpl implements CategoryService {
 }

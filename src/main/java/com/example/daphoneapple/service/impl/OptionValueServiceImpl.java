@@ -1,4 +1,8 @@
-package com.example.daphoneapple.service;
+package com.example.daphoneapple.service.impl;
 
-public interface OptionValueService {
+import com.example.daphoneapple.service.OptionValueService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class OptionValueServiceImpl implements OptionValueService {
 }

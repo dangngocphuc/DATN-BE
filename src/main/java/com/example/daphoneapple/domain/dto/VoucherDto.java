@@ -1,7 +1,22 @@
-package com.example.daphoneapple.entity;
+package com.example.daphoneapple.domain.dto;
+
+import com.example.daphoneapple.entity.Voucher;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.time.LocalDate;
 
 /**
- * A DTO for the {@link com.example.daphoneapple.entity.Voucher} entity
+ * A DTO for the {@link Voucher} entity
  */
-public class VoucherDto {
+@Data
+public class VoucherDto implements Serializable {
+    private final Long id;
+    private final LocalDate createDate;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
+    private final Long count;
+    private final Double discount;
+    private final Integer type;
+    private final Boolean status;
 }

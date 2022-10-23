@@ -1,7 +1,8 @@
-package com.example.daphoneapple.service;
+package com.example.daphoneapple.service.impl;
 
-import org.springframework.stereotype.Repository;
+import com.example.daphoneapple.service.ProductAccessoriesService;
+import org.springframework.stereotype.Service;
 
-
-public interface ProductAccessoriesService {
+@Service
+public class ProductAccessoriesServiceImpl implements ProductAccessoriesService {
 }

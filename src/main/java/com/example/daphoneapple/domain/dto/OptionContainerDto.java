@@ -1,7 +1,14 @@
-package com.example.daphoneapple.entity;
+package com.example.daphoneapple.domain.dto;
+
+import com.example.daphoneapple.entity.OptionContainer;
+import lombok.Data;
+
+import java.io.Serializable;
 
 /**
- * A DTO for the {@link com.example.daphoneapple.entity.OptionContainer} entity
+ * A DTO for the {@link OptionContainer} entity
  */
-public class OptionContainerDto {
+@Data
+public class OptionContainerDto implements Serializable {
+    private final Long id;
 }

@@ -1,7 +1,15 @@
-package com.example.daphoneapple.entity;
+package com.example.daphoneapple.domain.dto;
+
+import com.example.daphoneapple.entity.Role;
+import lombok.Data;
+
+import java.io.Serializable;
 
 /**
- * A DTO for the {@link com.example.daphoneapple.entity.Role} entity
+ * A DTO for the {@link Role} entity
  */
-public class RoleDto {
+@Data
+public class RoleDto implements Serializable {
+    private final Integer id;
+    private final String name;
 }
