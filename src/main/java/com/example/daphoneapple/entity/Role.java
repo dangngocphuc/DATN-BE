@@ -12,11 +12,8 @@ import java.util.List;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Integer id;
-
     private String name;
-
     @Column(name = "Role_status")
     private Boolean status;
 

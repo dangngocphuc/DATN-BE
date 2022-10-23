@@ -4,6 +4,7 @@ package com.example.daphoneapple.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +26,8 @@ public class Order {
     private String customerName;
     @Column(name = "Order_address")
     private String address;
+    @Column(name = "Order_createDate")
+    private LocalDate createDate;
     private Double totalPrice;
     private String description;
     private Date shipDate;
@@ -45,5 +48,9 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails ;
 
+    @PrePersist
+    public void settingOrderDate(){
+        this.createDate = LocalDate.now();
+    }
 
 }

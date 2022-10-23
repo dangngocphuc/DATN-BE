@@ -10,4 +10,5 @@ import java.io.Serializable;
 @Data
 public class CategoryDto implements Serializable {
     private final String name;
+    private final Boolean status;
 }

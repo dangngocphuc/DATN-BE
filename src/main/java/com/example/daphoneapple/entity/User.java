@@ -3,6 +3,7 @@ package com.example.daphoneapple.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -24,13 +25,19 @@ public class User {
     private Integer phoneNumber;
     private Boolean gender;
     private String fullName;
+    private LocalDate createDate;
     private Boolean status;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<UserRole> userRoles;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Order> list = new java.util.ArrayList<>();
+    private List<Order> list;
+
+    @PrePersist
+    public void settingUserCreateDate(){
+        this.createDate = LocalDate.now();
+    }
 
 
 }
